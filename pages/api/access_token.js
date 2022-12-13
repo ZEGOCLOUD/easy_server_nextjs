@@ -37,11 +37,6 @@ export default async function generateAccessToken(req, resp) {
   );
 
   return resp.json({
-    token:
-      token +
-      "#" +
-      Buffer.from(
-        JSON.stringify({ userID, roomID, userName, appID: APP_ID })
-      ).toString("base64"),
+    token,
   });
 }
