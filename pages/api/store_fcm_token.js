@@ -1,4 +1,4 @@
-import { storeFcmToken } from "../../lib/fireBase";
+import { storeFcmTokenFCM } from "../../lib/fireBase";
 import commonFilter from "../../lib/filter";
 
 export default async function storeFcmToken(req, resp) {
@@ -12,6 +12,6 @@ export default async function storeFcmToken(req, resp) {
   } else if (token == undefined) {
     res.json({ ret: -2, message: "Token invalid!" });
   }
-  storeFcmToken(userID, token, deviceType);
+  storeFcmTokenFCM(userID, token, deviceType);
   resp.json({ ret: 0, message: "Succeed" });
 }

@@ -1,4 +1,4 @@
-import { sendCallInvitation } from "../../lib/fireBase";
+import { sendCallInvitationFCM } from "../../lib/fireBase";
 
 export default async function sendCallInvitation(req, resp) {
   await commonFilter(req, resp);
@@ -7,7 +7,7 @@ export default async function sendCallInvitation(req, resp) {
     resp.json({ ret: -1, message: "Invalid userID for send call invitation" });
     console.log("Invalid userID for send call invitation");
   } else {
-    sendCallInvitation(req.body)
+    sendCallInvitationFCM(req.body)
       .then((result) => {
         console.log(result);
         resp.json({ ret: 0, message: "Succeed" });
