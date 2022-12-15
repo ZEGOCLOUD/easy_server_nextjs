@@ -1,10 +1,13 @@
 import commonFilter from "../../lib/filter";
 const { generateToken04 } = require("../../lib/zegoServerToken");
-if (!(process.env.APP_ID && process.env.SERVER_SECRET)) {
+console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>", process.env.ZEGOCLOUD_APP_ID)
+if (!(process.env.ZEGOCLOUD_APP_ID && process.env.ZEGOCLOUD_SERVER_SECRET)) {
   throw new Error("You must define an APP_ID and SERVER_SECRET");
 }
 const APP_ID = process.env.ZEGOCLOUD_APP_ID;
 const SERVER_SECRET = process.env.ZEGOCLOUD_SERVER_SECRET;
+
+console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>", process.env.ZEGOCLOUD_APP_ID)
 
 export default async function generateAccessToken(req, resp) {
   await commonFilter(req, resp);
