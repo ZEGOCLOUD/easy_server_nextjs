@@ -1,4 +1,5 @@
-import { sendCallInvitationFCM } from "../../lib/fireBase";
+import FirebaseManager from "../../../lib/firebase";
+import commonFilter from "../../../lib/filter";
 
 export default async function sendCallInvitation(req, resp) {
   await commonFilter(req, resp);
@@ -7,7 +8,7 @@ export default async function sendCallInvitation(req, resp) {
     resp.json({ ret: -1, message: "Invalid userID for send call invitation" });
     console.log("Invalid userID for send call invitation");
   } else {
-    sendCallInvitationFCM(req.body)
+    FirebaseManager.getInstance().sendCallInvitation(req.body)
       .then((result) => {
         console.log(result);
         resp.json({ ret: 0, message: "Succeed" });

@@ -1,4 +1,5 @@
-import { sendGroupCallInvitationFCM } from "../../lib/fireBase";
+import FirebaseManager from "../../../lib/firebase";
+import commonFilter from "../../../lib/filter";
 
 export default async function sendGroupCallInvitation(req, resp) {
   await commonFilter(req, resp);
@@ -10,7 +11,7 @@ export default async function sendGroupCallInvitation(req, resp) {
     });
     console.log("No user id in the list for sending group call invitation.");
   } else {
-    const result = await sendGroupCallInvitationFCM(body);
+    const result = await FirebaseManager.getInstance().sendGroupCallInvitation(req.body);
     resp.json(result);
   }
 }

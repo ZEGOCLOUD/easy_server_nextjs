@@ -1,4 +1,5 @@
-import { declineCallInvitationFCM } from "../../lib/fireBase";
+import FirebaseManager from "../../../lib/firebase";
+import commonFilter from "../../../lib/filter";
 
 export default async function declineCallInvitation(req, resp) {
   await commonFilter(req, resp);
@@ -17,7 +18,7 @@ export default async function declineCallInvitation(req, resp) {
     });
     console.log("Invalid roomID for canceling call invitation");
   } else {
-    declineCallInvitationFCM(req.body)
+    FirebaseManager.getInstance().declineCallInvitation(req.body)
       .then((result) => {
         console.log(result);
         resp.json({ ret: 0, message: "Succeed" });

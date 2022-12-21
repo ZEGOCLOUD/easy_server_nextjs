@@ -1,5 +1,5 @@
 import commonFilter from "../../lib/filter";
-import { describeRoomList } from "../../lib/roomList";
+import { describeRoomList } from "../../lib/room_list";
 if (!(process.env.APP_ID && process.env.SERVER_SECRET)) {
   throw new Error("You must define an APP_ID and SERVER_SECRET");
 }

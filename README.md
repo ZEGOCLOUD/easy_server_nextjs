@@ -2,6 +2,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FMatch-Yang%2Feasy_token_nextjs&env=ZEGOCLOUD_APP_ID,ZEGOCLOUD_SERVER_SECRET,FA_PROJECT_ID,FA_PRIVATE_KEY_ID,FA_PRIVATE_KEY,FA_CLIENT_EMAIL,FA_CLIENT_ID,FA_CLIENT_X509_CERT_URL&envDescription=You%20shoud%20set%20all%20the%20environment%20variables%20proply%20to%20make%20it%20work&envLink=https%3A%2F%2Fgithub.com%2FMatch-Yang%2Feasy_token_nextjs%2Fblob%2Fmain%2FEnvironmentVariable.md)
+
 First, run the development server:
 
 ```bash

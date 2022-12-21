@@ -1,5 +1,5 @@
-import { storeFcmTokenFCM } from "../../lib/fireBase";
-import commonFilter from "../../lib/filter";
+import FirebaseManager from "../../../lib/firebase";
+import commonFilter from "../../../lib/filter";
 
 export default async function storeFcmToken(req, resp) {
   await commonFilter(req, resp);
@@ -8,10 +8,11 @@ export default async function storeFcmToken(req, resp) {
   const token = req.body.token;
   const deviceType = req.body.deviceType;
   if (userID == undefined) {
-    res.json({ ret: -1, message: "User id invalid!" });
+    resp.json({ ret: -1, message: "User id invalid!" });
   } else if (token == undefined) {
-    res.json({ ret: -2, message: "Token invalid!" });
+    resp.json({ ret: -2, message: "Token invalid!" });
   }
-  storeFcmTokenFCM(userID, token, deviceType);
+  FirebaseManager.getInstance().storeFcmToken(userID, token, deviceType);
   resp.json({ ret: 0, message: "Succeed" });
 }
+
