@@ -39,10 +39,10 @@ We use [Firebase FCM](https://firebase.google.com/docs/cloud-messaging) for call
 ### Deploy service
 
 1. Click this deploy button below to start deploy your service.
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FZEGOCLOUD%2Feasy_server_nextjs&env=ZEGOCLOUD_APP_ID,ZEGOCLOUD_SERVER_SECRET,FA_PROJECT_ID,FA_PRIVATE_KEY_ID,FA_PRIVATE_KEY,FA_CLIENT_EMAIL,FA_CLIENT_ID,FA_CLIENT_X509_CERT_URL)
-1. Create git repository for the service
-2. Open the `Firebase Admin SDK Private Key` you just obtain at the above step, and fill in the content to the `Required Environment Variables` parameter input box.
-3. Press `Deploy` button, wait for the depoly process completed.
+> [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FZEGOCLOUD%2Feasy_server_nextjs&env=ZEGOCLOUD_APP_ID,ZEGOCLOUD_SERVER_SECRET,FA_PROJECT_ID,FA_PRIVATE_KEY_ID,FA_PRIVATE_KEY,FA_CLIENT_EMAIL,FA_CLIENT_ID,FA_CLIENT_X509_CERT_URL)
+2. Create git repository for the service
+3. Open the `Firebase Admin SDK Private Key` you just obtain at the above step, and fill in the content to the `Required Environment Variables` parameter input box.
+4. Press `Deploy` button, wait for the depoly process completed.
 
 > **Note**
 > This URL can also get access token too.
