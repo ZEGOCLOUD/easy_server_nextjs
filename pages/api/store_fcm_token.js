@@ -1,4 +1,4 @@
-import FirebaseManager from "../../../lib/fire_base";
+import FirebaseManager from "../../lib/fire_base";
 import commonFilter from "../../../lib/filter";
 
 export default async function storeFcmToken(req, resp) {

@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Easy Server
 
-## Getting Started
+You can use Easy-Server to test ZEGOCLOUD's product quickly.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FMatch-Yang%2Feasy_token_nextjs&env=ZEGOCLOUD_APP_ID,ZEGOCLOUD_SERVER_SECRET,FA_PROJECT_ID,FA_PRIVATE_KEY_ID,FA_PRIVATE_KEY,FA_CLIENT_EMAIL,FA_CLIENT_ID,FA_CLIENT_X509_CERT_URL&envDescription=You%20shoud%20set%20all%20the%20environment%20variables%20proply%20to%20make%20it%20work&envLink=https%3A%2F%2Fgithub.com%2FMatch-Yang%2Feasy_token_nextjs%2Fblob%2Fmain%2FEnvironmentVariable.md)
+> **Warning**
+> This project is for TEST only! Do not use it for production!
+> You can copy the code and deploy to your own server.
 
-First, run the development server:
+## Get get access token
 
-```bash
-npm run dev
-# or
-yarn dev
+You may need access token when you using ZEGOCLOUD's service. Click the Deploy button below to deploy a server then you can get access token from it:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FZEGOCLOUD%2Feasy_server_nextjs&env=ZEGOCLOUD_APP_ID,ZEGOCLOUD_SERVER_SECRET)
+
+```
+https://your_vercel_project_name.vercel.app/api/get_access_token?uid=123
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> **Note**
+> Token valid in 3600 seconds by default. If you want to change the expired time, request with the `expired_ts` parameter. e.g. 
+> `https://your_vercel_project_name.vercel.app/api/get_access_token?uid=123&expired_ts=7200`
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Implement call invitation functionality with 
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Create Firebase project
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+We use [Firebase FCM](https://firebase.google.com/docs/cloud-messaging) for call invitation service.
 
-## Learn More
+1. Go to [Firebase Console](https://console.firebase.google.com/) and create new project if you don't have one.
 
-To learn more about Next.js, take a look at the following resources:
+2. Generate `Firebase Admin SDK Private Key`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![fcm_admin_sdk_key](https://user-images.githubusercontent.com/5242852/209456355-80fba59a-ea47-46af-8bd8-c9fafb62d745.gif)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Deploy service
 
-## Deploy on Vercel
+1. Click this deploy button below to start deploy your service.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FZEGOCLOUD%2Feasy_server_nextjs&env=ZEGOCLOUD_APP_ID,ZEGOCLOUD_SERVER_SECRET,FA_PROJECT_ID,FA_PRIVATE_KEY_ID,FA_PRIVATE_KEY,FA_CLIENT_EMAIL,FA_CLIENT_ID,FA_CLIENT_X509_CERT_URL)
+1. Create git repository for the service
+2. Open the `Firebase Admin SDK Private Key` you just obtain at the above step, and fill in the content to the `Required Environment Variables` parameter input box.
+3. Press `Deploy` button, wait for the depoly process completed.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+> **Note**
+> This URL can also get access token too.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## About us
+
+https://www.zegocloud.com/
+
