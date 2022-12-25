@@ -3,7 +3,9 @@
 You can use Easy-Server to test ZEGOCLOUD's product quickly.
 
 > **Warning**
+> 
 > This project is for TEST only! Do not use it for production!
+> 
 > You can copy the code and deploy to your own server.
 
 ## Get get access token
@@ -17,7 +19,9 @@ https://your_vercel_project_name.vercel.app/api/get_access_token?uid=123
 ```
 
 > **Note**
+> 
 > Token valid in 3600 seconds by default. If you want to change the expired time, request with the `expired_ts` parameter. e.g. 
+> 
 > `https://your_vercel_project_name.vercel.app/api/get_access_token?uid=123&expired_ts=7200`
 
 ## Implement call invitation functionality with 
