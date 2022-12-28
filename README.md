@@ -50,5 +50,5 @@ We use [Firebase FCM](https://firebase.google.com/docs/cloud-messaging) for call
 
 ## About us
 
-https://www.zegocloud.com/
+https://www.zegocloud.com
 
